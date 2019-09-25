@@ -17,13 +17,13 @@ public class LoginService {
 
     public String loginFacebook() {
         OAuth2Parameters parameters = new OAuth2Parameters();
-        parameters.setRedirectUri("localhost:8080/facebook");
+        parameters.setRedirectUri("localhost:8080/api/login/facebook");
         parameters.setScope("public_profile, email");
         return createConnectionFactory().getOAuthOperations().buildAuthenticateUrl(parameters);
     }
 
     public String getAccessFacebookToken(String code) {
 
-        return createConnectionFactory().getOAuthOperations().exchangeForAccess(code, "localhost:8080/facebook", null).getAccessToken();
+        return createConnectionFactory().getOAuthOperations().exchangeForAccess(code, "localhost:8080/api/login//facebook", null).getAccessToken();
     }
 }

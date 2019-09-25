@@ -24,6 +24,7 @@ public class LoginController {
         System.out.println("asdfasdf");
         String url = this.loginService.loginFacebook();
         redirectView.setUrl(url);
+        System.out.println(url);
         return redirectView;
     }
     
